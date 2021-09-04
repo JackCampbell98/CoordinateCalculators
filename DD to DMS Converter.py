@@ -12,7 +12,6 @@ while lat_dd != float():
     else: 
         break
 
-
 while long_dd != float():
     long_dd = float(input("Enter longitude in decimal degrees format: "))
     if (long_dd > 180) or (long_dd < -180): 
