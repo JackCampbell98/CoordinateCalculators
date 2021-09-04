@@ -1,46 +1,46 @@
 degree_sign = u'\N{DEGREE SIGN}'
 
-ddlat = ("data_needed")
-ddlong = ("data_needed")
+lat_dd = ("data_needed")
+long_dd = ("data_needed")
 
 #dd user input
-while ddlat != float():
-    ddlat = float(input("Enter latitude in decimal degrees format: "))
-    if (ddlat > 90) or (ddlat < -90): 
+while lat_dd != float():
+    lat_dd = float(input("Enter latitude in decimal degrees format: "))
+    if (lat_dd > 90) or (lat_dd < -90): 
         print("Input is outside range. Please enter a valid latitude...") 
         continue
     else: 
         break
 
 
-while ddlong != float():
-    ddlong = float(input("Enter longitude in decimal degrees format: "))
-    if (ddlong > 180) or (ddlong < -180): 
+while long_dd != float():
+    long_dd = float(input("Enter longitude in decimal degrees format: "))
+    if (long_dd > 180) or (long_dd < -180): 
         print("Input is outside range. Please enter a valid longitude...") 
         continue
     else: 
         break
 
 #store degrees from dd
-deglat = (int(ddlat))
-deglong = (int(ddlong))
+lat_deg = (int(lat_dd))
+long_deg = (int(long_dd))
 
 #calculate minutes float component
-float_minlat = (ddlat - deglat) * 60
-float_minlong = (ddlong - deglong) * 60
+float_lat_min = (lat_dd - lat_deg) * 60
+float_long_min = (long_dd - long_deg) * 60
 
-minlat = int(float_minlat)
-minlong = int(float_minlong)
+lat_min = int(float_lat_min)
+long_min = int(float_long_min)
 
 #calculate seconds float component
-float_seclat = (float_minlat - minlat) * 60
-float_seclong = (float_minlong - minlong) *60
+float_lat_sec = (float_lat_min - lat_min) * 60
+float_long_sec = (float_long_min - long_min) *60
 
-seclat = round(float_seclat, 5) 
-seclong = round(float_seclong, 5)
+lat_sec = round(float_lat_sec, 5) 
+long_sec = round(float_long_sec, 5)
 
 #print to terminal
-print("Latitude in DMS: " + str(deglat) + str(degree_sign) + " " + str(minlat) + "' " + str(seclat) + '"')
-print("Longitude in DMS: " + str(deglong) + str(degree_sign) + " " + str(minlong) + "' " + str(seclong) + '"') 
+print("Latitude in DMS: " + str(lat_deg) + str(degree_sign) + " " + str(lat_min) + "' " + str(lat_sec) + '"')
+print("Longitude in DMS: " + str(long_deg) + str(degree_sign) + " " + str(long_min) + "' " + str(long_sec) + '"') 
 
 input('Press ENTER to exit')
